@@ -1,6 +1,6 @@
 {
   "name": "application-name",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Specific email parser for importing in Efarma 2.0 application (for Drug Stores in Russia)",
   "license": "MIT",
   "dependencies": {
