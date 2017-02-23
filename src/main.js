@@ -10,7 +10,7 @@ const print = require('./utils');
 print('Парсер накладных запущен!');
 
 const fetchInvoices = () => {
-    let result = '';
+    let result = [];
     let chain = Promise.resolve();
 
     config.providers.forEach((provider) => {
@@ -30,7 +30,7 @@ const fetchInvoices = () => {
                             } else {
                                 files = files.filter(i => !config.excludeFilesAndFolders.has(i));
                                 if (files.length > 0)
-                                    result += provider.name + ': ' + files.length + '; ';
+                                    result.push(provider.name + ': ' + files.length);
                                 resolve();
                             }
                         })
@@ -43,7 +43,7 @@ const fetchInvoices = () => {
     chain = chain
         .then(() => {
             print(result.length > 0 ?
-                'Не импортированные: ' + result :
+                'Не импортированные: ' + result.sort().join(', ') :
                 'Не ипортированных накладных нет :)');
         });
 };
