@@ -5,8 +5,8 @@ let mainPath = "D:\\eFarma2\\Nakl\\";
 
 let config = {
   imap: {
-    user: "ipislamuratova@yandex.ru",
-    password: "zujlrf1963",
+    user: "*",
+    password: "*",
     host: "imap.yandex.ru",
     port: 993,
     tls: true,
